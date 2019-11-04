@@ -17,6 +17,9 @@ export class Packer {
   };
 
   fit = (blocks: IDElement[]) => {
+    blocks = blocks.sort((a, b) => {
+      return a.width - b.width;
+    });
     const retFits: Node[] = [];
     for (let n = 0; n < blocks.length; n++) {
       let block = blocks[n];

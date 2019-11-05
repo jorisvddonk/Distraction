@@ -1,24 +1,26 @@
 import React from "react";
-import { DElement, IDElement } from "./DElement";
+import { DElement, IDElement, IDElementBlock } from "./DElement";
 import ReactDOMServer from "react-dom/server";
 import { Packer } from "./Packer";
 import { DPage } from "./DPage";
 
 export class Builder {
-  private iDElements: IDElement[] = [];
+  private iDElements: IDElementBlock[] = [];
   constructor(private pageWidth: number, private pageHeight: number) { }
 
   public addElement(options: IDElement) {
-    options = Object.assign({}, options);
-    if (options.back !== undefined) {
-      options.width = options.width * 2; // todo: add different double-sided layouts (e.g. bottom-top)
+    const o = Object.assign({}, options) as IDElementBlock;
+    o.totalwidth = o.width;
+    o.totalheight = o.height;
+    if (o.back !== undefined) {
+      o.totalwidth = o.width * 2; // todo: add different double-sided layouts (e.g. bottom-top)
     }
-    this.iDElements.push(options);
+    this.iDElements.push(o);
   }
 
   private get elements(): Array<JSX.Element[]> {
     const pages: Array<JSX.Element[]> = [];
-    const remainingElements: IDElement[] = ([] as IDElement[]).concat(this.iDElements);
+    const remainingElements: IDElementBlock[] = ([] as IDElementBlock[]).concat(this.iDElements);
     while (remainingElements.length > 0) {
       const packer: Packer = new Packer(this.pageWidth, this.pageHeight);
       const fits = packer.fit(remainingElements);

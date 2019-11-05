@@ -1,5 +1,5 @@
 // https://codeincomplete.com/posts/bin-packing/
-import { IDElement } from "./DElement";
+import { IDElement, IDElementBlock } from "./DElement";
 
 export interface Node {
   width: number;
@@ -16,16 +16,16 @@ export class Packer {
     this.root = { x: 0, y: 0, width: w, height: h };
   };
 
-  fit = (blocks: IDElement[]) => {
+  fit = (blocks: IDElementBlock[]) => {
     blocks = blocks.sort((a, b) => {
-      return a.width - b.width;
+      return a.totalwidth - b.totalwidth;
     });
     const retFits: Node[] = [];
     for (let n = 0; n < blocks.length; n++) {
       let block = blocks[n];
-      let node = this.findNode(this.root, block.width, block.height)
+      let node = this.findNode(this.root, block.totalwidth, block.totalheight)
       if (node) {
-        retFits.push(this.splitNode(node, block.width, block.height));
+        retFits.push(this.splitNode(node, block.totalwidth, block.totalheight));
       }
     }
     return retFits;

@@ -1,10 +1,15 @@
-import React, { CSSProperties } from "react";
+import React, { CSSProperties, ReactNode } from "react";
 
 export interface IDElement {
-  front: () => void;
-  back?: () => void;
+  front: () => ReactNode;
+  back?: () => ReactNode;
   width: number;
   height: number;
+}
+
+export interface IDElementBlock extends IDElement {
+  totalwidth: number;
+  totalheight: number;
 }
 
 export interface IElementState {
@@ -14,10 +19,15 @@ export interface IElementState {
 
 export class DElement extends React.Component<IDElement & IElementState, any> {
   render() {
-    return <div style={this.cardStyle}>
-      {this.props.front()}
-      {this.props.back !== undefined ? this.props.back() : null}
-    </div>
+    return <>
+      <div style={this.cardStyle}>
+        {this.props.front()}
+      </div>
+      {this.props.back !== undefined ?
+        <div style={this.cardStyleBack}>
+          {this.props.back()}
+        </div> : null}
+    </>
   }
 
   get cardStyle(): CSSProperties {
@@ -30,5 +40,12 @@ export class DElement extends React.Component<IDElement & IElementState, any> {
       top: this.props.y + "mm",
       overflow: 'hidden'
     };
+  }
+
+  get cardStyleBack(): CSSProperties {
+    return Object.assign({}, this.cardStyle, {
+      left: (this.props.x + this.props.width) + "mm",
+      top: this.props.y + "mm", // todo: add top-bottom double-sided style?
+    });
   }
 }

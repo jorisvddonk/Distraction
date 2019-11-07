@@ -32,7 +32,6 @@ export class DElement extends React.Component<IDElement & IElementState, any> {
 
   get cardStyle(): CSSProperties {
     return {
-      border: "0.2mm solid black",
       width: this.props.width + "mm",
       height: this.props.height + "mm",
       position: "absolute",

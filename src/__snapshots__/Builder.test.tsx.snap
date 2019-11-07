@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Builder should build a bunch of elements into pages 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "height": "100mm",
+        "overflow": "hidden",
+        "position": "relative",
+        "width": "100mm",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "50mm",
+          "left": "0mm",
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": "0mm",
+          "width": "50mm",
+        }
+      }
+    >
+      <span />
+    </div>
+    <div
+      style={
+        Object {
+          "height": "50mm",
+          "left": "50mm",
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": "0mm",
+          "width": "50mm",
+        }
+      }
+    >
+      <span />
+    </div>
+    <div
+      style={
+        Object {
+          "height": "50mm",
+          "left": "0mm",
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": "50mm",
+          "width": "50mm",
+        }
+      }
+    >
+      <span />
+    </div>
+    <div
+      style={
+        Object {
+          "height": "50mm",
+          "left": "50mm",
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": "50mm",
+          "width": "50mm",
+        }
+      }
+    >
+      <span />
+    </div>
+  </div>,
+  <div
+    style={
+      Object {
+        "height": "100mm",
+        "overflow": "hidden",
+        "position": "relative",
+        "width": "100mm",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "50mm",
+          "left": "0mm",
+          "overflow": "hidden",
+          "position": "absolute",
+          "top": "0mm",
+          "width": "50mm",
+        }
+      }
+    >
+      <span />
+    </div>
+  </div>,
+]
+`;

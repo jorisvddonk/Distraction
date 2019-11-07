@@ -56,7 +56,7 @@ export class Builder {
   }
 
   public static getRootStylesheet() {
-    return `* { box-sizing: border-box; -webkit-print-color-adjust: exact; }
+    return `* { -webkit-print-color-adjust: exact; }
     html, body {
       padding: 0px !important;
       margin: 0px !important;

@@ -20,17 +20,17 @@ export interface IElementState {
 export class DElement extends React.Component<IDElement & IElementState, any> {
   render() {
     return <>
-      <div style={this.cardStyle}>
+      <div style={this.elementStyle}>
         {this.props.front()}
       </div>
       {this.props.back !== undefined ?
-        <div style={this.cardStyleBack}>
+        <div style={this.elementStyleBack}>
           {this.props.back()}
         </div> : null}
     </>
   }
 
-  get cardStyle(): CSSProperties {
+  get elementStyle(): CSSProperties {
     return {
       width: this.props.width + "mm",
       height: this.props.height + "mm",
@@ -41,8 +41,8 @@ export class DElement extends React.Component<IDElement & IElementState, any> {
     };
   }
 
-  get cardStyleBack(): CSSProperties {
-    return Object.assign({}, this.cardStyle, {
+  get elementStyleBack(): CSSProperties {
+    return Object.assign({}, this.elementStyle, {
       left: (this.props.x + this.props.width) + "mm",
       top: this.props.y + "mm", // todo: add top-bottom double-sided style?
     });

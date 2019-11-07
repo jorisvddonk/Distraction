@@ -1,6 +1,6 @@
 {
   "name": "distraction",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Boardgame prototyping with React",
   "main": "build.ts",
   "scripts": {
@@ -11,23 +11,15 @@
   "devDependencies": {
     "@types/node": "^12.7.5",
     "@types/puppeteer": "^1.19.1",
-    "@types/react": "^16.9.2",
-    "@types/tinycolor2": "^1.4.2"
+    "@types/react": "^16.9.2"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
+    "html-webpack-plugin": "^3.2.0",
     "puppeteer": "^1.20.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "ts-node": "^8.4.1",
-    "html-webpack-plugin": "^3.2.0",
-    "source-map-loader": "^0.2.4",
-    "ts-loader": "^6.2.0",
-    "typescript": "^3.6.4",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
-    "webpack-dev-server": "^3.8.2",
-    "webpack-hot-middleware": "^2.25.0"
+    "typescript": "^3.6.4"
   },
   "author": "Joris van de Donk <jorisvddonk@gmail.com>",
   "license": "MIT"

@@ -1,9 +1,5 @@
-import { Renderer } from "./Renderer";
-import { getHTMLS } from "./main";
-
-async function run() {
-  const renderer = new Renderer(getHTMLS());
-  await renderer.renderToPNGs(i => `out/test_${i}.png`);
-}
-
-run();
+export * from './Builder';
+export * from './Renderer';
+export * from './DElement';
+export * from './DPage';
+export * from './Packer';

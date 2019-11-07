@@ -6,7 +6,7 @@ import { DPage } from "./DPage";
 
 export class Builder {
   private iDElements: IDElementBlock[] = [];
-  constructor(private pageWidth: number, private pageHeight: number) { }
+  constructor(private pageWidth: number = 210, private pageHeight: number = 297) { }
 
   public addElement(options: IDElement) {
     const o = Object.assign({}, options) as IDElementBlock;

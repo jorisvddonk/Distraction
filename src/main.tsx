@@ -2,7 +2,7 @@ import React from "react";
 import { Builder } from "./Builder";
 import { Word } from "./Word";
 
-const builder: Builder = new Builder(210, 297);
+const builder: Builder = new Builder();
 for (let i = 0; i < 100; i++) {
   builder.addElement({
     front: () => <Word word={`front_${i}`} />,

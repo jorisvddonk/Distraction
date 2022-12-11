@@ -14,7 +14,8 @@
     "clean": "rimraf dist",
     "prepublish": "npm run-script clean && tsc",
     "example_1": "ts-node --cwd . src/examples/example_1.tsx",
-    "example_2": "ts-node --cwd . src/examples/example_2.tsx"
+    "example_2": "ts-node --cwd . src/examples/example_2.tsx",
+    "example_3": "ts-node --cwd . src/examples/example_3.tsx"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",

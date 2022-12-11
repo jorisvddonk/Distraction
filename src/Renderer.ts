@@ -80,7 +80,9 @@ export class Renderer {
     await this.emulateMedia(page);
     await page.pdf({
       path: path,
-      printBackground: true
+      printBackground: true,
+      displayHeaderFooter: false,
+      format: 'A4'
     });
     await browserContext.close();
   }

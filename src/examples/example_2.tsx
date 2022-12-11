@@ -1,19 +1,7 @@
-# Distraction
-
-Distraction is a boardgame design and prototyping toolkit, allowing you to create prototypes of boardgames using React.
-
-Instructions follow later!
-
-## Installation
-
-`npm install distraction`
-
-## Usage
-
-```tsx
-import { Builder, DoubleSidedLayoutMode, Renderer } from 'distraction';
+import { Builder, DoubleSidedLayoutMode, Renderer } from '..';
 import React from 'react';
 import * as path from 'path';
+import * as fs from 'fs';
 
 const builder = new Builder({elementMargin: 2, pageMargin: 3, doubleSidedLayoutMode: DoubleSidedLayoutMode.ABOVE_BELOW__FOLD});
 for (let i = 0; i < 10; i++) {
@@ -34,10 +22,5 @@ for (let i = 0; i < 10; i++) {
   }
 }
 const renderer = new Renderer(builder);
-renderer.renderToPNGs((i) => path.join(process.cwd(), 'example_output', `./foo${i}.png`));
-
-```
-
-output:
-
-![generated image 1](./example_output/foo0.png)
+renderer.renderToPDF(path.join(process.cwd(), 'example_output', `./example_2.pdf`));
+fs.writeFileSync('./test.html', builder.buildSinglePage());

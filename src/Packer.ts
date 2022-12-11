@@ -12,8 +12,9 @@ export interface Node {
 
 export class Packer {
   private root: Node;
-  constructor(w, h) {
-    this.root = { x: 0, y: 0, width: w, height: h };
+  constructor(w, h, pageMargin) {
+    // NOTE: any element margin is assumed to be calculated in the blocks already.
+    this.root = { x: pageMargin, y: pageMargin, width: w - (pageMargin * 2), height: h - (pageMargin * 2) };
   };
 
   fit = (blocks: IDElementBlock[]) => {

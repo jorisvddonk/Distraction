@@ -1,6 +1,6 @@
 {
   "name": "distraction",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Boardgame prototyping with React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,8 @@
     "build": "tsc",
     "clean": "rimraf dist",
     "prepublish": "npm run-script clean && tsc",
-    "example_1": "ts-node --cwd . src/examples/example_1.tsx"
+    "example_1": "ts-node --cwd . src/examples/example_1.tsx",
+    "example_2": "ts-node --cwd . src/examples/example_2.tsx"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",

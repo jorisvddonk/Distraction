@@ -2,7 +2,8 @@ import React from "react";
 
 interface IDPageProps {
   width: number,
-  height: number
+  height: number,
+  children: React.ReactNode
 }
 
 export class DPage extends React.Component<IDPageProps, any> {

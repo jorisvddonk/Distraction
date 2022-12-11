@@ -10,7 +10,7 @@ export class Renderer {
   }
 
   private async emulateMedia(page: any) {
-      await page.emulateMedia({media: 'screen'});
+    await page.emulateMedia({ media: 'screen' });
   }
 
   public async renderToPNGs(pathFunc: (i: number) => string) {
@@ -19,11 +19,17 @@ export class Renderer {
     for (let i = 0; i < htmls.length; i++) {
       const page = await browser.newPage();
       await page.setContent(htmls[i]);
+      await page.setViewportSize({
+        width: 794,
+        height: 1122,
+      });
       await this.emulateMedia(page);
       await page.waitForTimeout(1000);
       await page.screenshot({
         path: pathFunc(i),
         type: "png",
+        scale: "css",
+        omitBackground: false,
         clip: {
           width: 794,
           height: 1122,

@@ -8,14 +8,14 @@ async function main() {
   for (let i = 0; i < 10; i++) {
     if (i % 2 === 0) {
       builder.addElement({
-        front: () => <div style={{ width: '100%', height: '100%', border: "0.2mm solid black", boxSizing: 'border-box', backgroundColor: '#fdd' }}>{i} (double-sided, front)</div>,
-        back: () => <div style={{ width: '100%', height: '100%', border: "0.2mm solid black", boxSizing: 'border-box', backgroundColor: '#ddf' }}>{i} (double-sided, back)</div>,
+        front: () => <div style={{ width: '100%', height: '100%', border: "0.2mm solid black", backgroundColor: '#fdd' }}>{i} (double-sided, front)</div>,
+        back: () => <div style={{ width: '100%', height: '100%', border: "0.2mm solid black", backgroundColor: '#ddf' }}>{i} (double-sided, back)</div>,
         width: 40,
         height: 20
       });
     } else {
       builder.addElement({
-        front: () => <div style={{ width: '100%', height: '100%', border: "0.2mm solid black", boxSizing: 'border-box', backgroundColor: '#fdd' }}>{i} (single-sided, front)</div>,
+        front: () => <div style={{ width: '100%', height: '100%', border: "0.2mm solid black", backgroundColor: '#fdd' }}>{i} (single-sided, front)</div>,
         back: undefined,
         width: 40,
         height: 20

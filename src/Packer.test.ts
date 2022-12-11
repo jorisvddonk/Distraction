@@ -13,7 +13,7 @@ describe("Packer", () => {
         totalheight: height
       }
     }
-    const p = new Packer(100, 100);
+    const p = new Packer(100, 100, 0);
     const nodes = p.fit([generateNode(30, 30), generateNode(30, 30), generateNode(30, 30), generateNode(30, 30)]);
     expect(nodes[0].x).toBe(0);
     expect(nodes[0].y).toBe(0);
@@ -35,9 +35,11 @@ describe("Packer", () => {
         totalheight: height
       }
     }
-    const p = new Packer(100, 100);
+    const p = new Packer(100, 100, 0);
     const nodes = p.fit([generateNode(90, 90), generateNode(30, 30)]);
     expect(nodes[0]).not.toBeNull();
     expect(nodes[1]).not.toBeNull();
   });
+
+  // TODO: test page margins as well
 })

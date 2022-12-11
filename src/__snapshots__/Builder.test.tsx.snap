@@ -13,6 +13,7 @@ exports[`Builder should build a bunch of elements into pages 1`] = `
     }
   >
     <div
+      className="_distraction_DElementSingleSided"
       style={
         {
           "height": "50mm",
@@ -24,9 +25,24 @@ exports[`Builder should build a bunch of elements into pages 1`] = `
         }
       }
     >
-      <span />
+      <div
+        className="_distraction_DElementSingleSided_front"
+        style={
+          {
+            "height": "50mm",
+            "left": "0mm",
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": "0mm",
+            "width": "50mm",
+          }
+        }
+      >
+        <span />
+      </div>
     </div>
     <div
+      className="_distraction_DElementSingleSided"
       style={
         {
           "height": "50mm",
@@ -38,9 +54,24 @@ exports[`Builder should build a bunch of elements into pages 1`] = `
         }
       }
     >
-      <span />
+      <div
+        className="_distraction_DElementSingleSided_front"
+        style={
+          {
+            "height": "50mm",
+            "left": "0mm",
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": "0mm",
+            "width": "50mm",
+          }
+        }
+      >
+        <span />
+      </div>
     </div>
     <div
+      className="_distraction_DElementSingleSided"
       style={
         {
           "height": "50mm",
@@ -52,9 +83,24 @@ exports[`Builder should build a bunch of elements into pages 1`] = `
         }
       }
     >
-      <span />
+      <div
+        className="_distraction_DElementSingleSided_front"
+        style={
+          {
+            "height": "50mm",
+            "left": "0mm",
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": "0mm",
+            "width": "50mm",
+          }
+        }
+      >
+        <span />
+      </div>
     </div>
     <div
+      className="_distraction_DElementSingleSided"
       style={
         {
           "height": "50mm",
@@ -66,7 +112,21 @@ exports[`Builder should build a bunch of elements into pages 1`] = `
         }
       }
     >
-      <span />
+      <div
+        className="_distraction_DElementSingleSided_front"
+        style={
+          {
+            "height": "50mm",
+            "left": "0mm",
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": "0mm",
+            "width": "50mm",
+          }
+        }
+      >
+        <span />
+      </div>
     </div>
   </div>,
   <div
@@ -80,6 +140,7 @@ exports[`Builder should build a bunch of elements into pages 1`] = `
     }
   >
     <div
+      className="_distraction_DElementSingleSided"
       style={
         {
           "height": "50mm",
@@ -91,7 +152,21 @@ exports[`Builder should build a bunch of elements into pages 1`] = `
         }
       }
     >
-      <span />
+      <div
+        className="_distraction_DElementSingleSided_front"
+        style={
+          {
+            "height": "50mm",
+            "left": "0mm",
+            "overflow": "hidden",
+            "position": "absolute",
+            "top": "0mm",
+            "width": "50mm",
+          }
+        }
+      >
+        <span />
+      </div>
     </div>
   </div>,
 ]

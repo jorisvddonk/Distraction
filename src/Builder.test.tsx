@@ -4,7 +4,7 @@ import renderer from 'react-test-renderer';
 
 describe("Builder", () => {
   it("should build a bunch of elements into pages", () => {
-    const builder = new Builder(100, 100);
+    const builder = new Builder({pageWidth: 100, pageHeight: 100});
     for (let i = 0; i < 5; i++) {
       builder.addElement({
         front: () => <span></span>,

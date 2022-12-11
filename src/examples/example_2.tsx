@@ -23,4 +23,5 @@ for (let i = 0; i < 10; i++) {
 }
 const renderer = new Renderer(builder);
 renderer.renderToPDF(path.join(process.cwd(), 'example_output', `./example_2.pdf`));
+renderer.renderToPNGs((i) => path.join(process.cwd(), 'example_output', `./example_2__${i}.png`));
 fs.writeFileSync('./test.html', builder.buildSinglePage());

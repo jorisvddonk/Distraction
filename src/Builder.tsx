@@ -101,18 +101,7 @@ export class Builder {
     });
   }
 
-  public buildMultipage(): string[] {
-    return this.pages.map(page => {
-      const body = ReactDOMServer.renderToString(page);
-      const htmlString = `<html><head><style>${this.getRootStylesheet()}</style></head><body>${body}</body></html>`;
-      return htmlString;
-    });
-  }
-
-  public buildSinglePage(): string {
-    const accumulatedPages = this.pages.reduce((memo, page) => {
-      return `${memo}${ReactDOMServer.renderToString(page)}`;
-    }, '');
+  private wrapContentWithHTML(content: string) {
     let bodyClassName = '';
     if (this.options.doubleSidedLayoutMode === DoubleSidedLayoutMode.SIDE_BY_SIDE__CUT || this.options.doubleSidedLayoutMode === DoubleSidedLayoutMode.ABOVE_BELOW__CUT) {
       bodyClassName = '_distraction_DoubleSidedMode__Cut';
@@ -120,7 +109,21 @@ export class Builder {
     if (this.options.doubleSidedLayoutMode === DoubleSidedLayoutMode.SIDE_BY_SIDE__FOLD || this.options.doubleSidedLayoutMode === DoubleSidedLayoutMode.ABOVE_BELOW__FOLD) {
       bodyClassName = '_distraction_DoubleSidedMode__Fold';
     }
-    return `<html><head><style>${this.getRootStylesheet()}</style></head><body class=${bodyClassName}>${accumulatedPages}</body></html>`;
+    return `<html><head><style>${this.getRootStylesheet()}</style></head><body class=${bodyClassName}>${content}</body></html>`;
+  }
+
+  public buildMultipage(): string[] {
+    return this.pages.map(page => {
+      const body = ReactDOMServer.renderToString(page);
+      return this.wrapContentWithHTML(body);;
+    });
+  }
+
+  public buildSinglePage(): string {
+    const accumulatedPages = this.pages.reduce((memo, page) => {
+      return `${memo}${ReactDOMServer.renderToString(page)}`;
+    }, '');
+    return this.wrapContentWithHTML(accumulatedPages);
   }
 
   public getRootStylesheet() {
@@ -138,8 +141,7 @@ export class Builder {
     }
 
     ._distraction_DoubleSidedMode__Fold ._distraction_DElementAboveBelow_back {
-      /* When in DoubleSidedMode 'Fold', we need to rotate the backface of AboveBelow elements */
-      transform: scaleY(-1) scaleX(-1);
+      transform: rotate(0.5turn);
     }
     `;
   }

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Builder should build a bunch of elements into pages 1`] = `
-Array [
+[
   <div
     style={
-      Object {
+      {
         "height": "100mm",
         "overflow": "hidden",
         "position": "relative",
@@ -14,7 +14,7 @@ Array [
   >
     <div
       style={
-        Object {
+        {
           "height": "50mm",
           "left": "0mm",
           "overflow": "hidden",
@@ -28,7 +28,7 @@ Array [
     </div>
     <div
       style={
-        Object {
+        {
           "height": "50mm",
           "left": "50mm",
           "overflow": "hidden",
@@ -42,7 +42,7 @@ Array [
     </div>
     <div
       style={
-        Object {
+        {
           "height": "50mm",
           "left": "0mm",
           "overflow": "hidden",
@@ -56,7 +56,7 @@ Array [
     </div>
     <div
       style={
-        Object {
+        {
           "height": "50mm",
           "left": "50mm",
           "overflow": "hidden",
@@ -71,7 +71,7 @@ Array [
   </div>,
   <div
     style={
-      Object {
+      {
         "height": "100mm",
         "overflow": "hidden",
         "position": "relative",
@@ -81,7 +81,7 @@ Array [
   >
     <div
       style={
-        Object {
+        {
           "height": "50mm",
           "left": "0mm",
           "overflow": "hidden",

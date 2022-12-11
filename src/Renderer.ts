@@ -51,7 +51,6 @@ export class Renderer {
         height: 1122
       });
       await this.emulateMedia(page);
-      await page.waitForTimeout(1000);
       await page.screenshot({
         path: pathFunc(i),
         type: "png",

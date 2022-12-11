@@ -1,13 +1,7 @@
-import puppeteer from "puppeteer";
 import { Builder } from ".";
 import { chromium } from "playwright";
 export class Renderer {
   constructor(private builder: Builder) { }
-  
-  private static async getBrowser__puppeteer() {
-    const browser = await puppeteer.launch();
-    return browser;
-  }
 
   private static async getBrowser() {
     //const browser = await firefox.launch();
@@ -16,8 +10,7 @@ export class Renderer {
   }
 
   private async emulateMedia(page: any) {
-      //await page.emulateMediaType('screen'); // Puppeteer API
-      await page.emulateMedia({media: 'screen'}); // Playwright API
+      await page.emulateMedia({media: 'screen'});
   }
 
   public async renderToPNGs(pathFunc: (i: number) => string) {
